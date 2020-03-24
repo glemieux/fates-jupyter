@@ -29,3 +29,9 @@ RAIN (t)                    2.388e+03 mm            1.670e+03 mm            3.47
 RAIN (b)                    2.388e+03 mm            1.670e+03 mm            3.477e+03 mm            2.746e+01 mm            4.504e+02 mm               nan mm/hr               nan mm/hr
 NPP (t)               1.352e+00 kgC/year      4.832e-02 kgC/year      1.569e+00 kgC/year     8.811e-02 kgC/month     1.218e-01 kgC/month             nan gC/hour             nan gC/hour
 NPP (b)               1.351e+00 kgC/year      4.830e-02 kgC/year      1.568e+00 kgC/year     8.772e-02 kgC/month     1.217e-01 kgC/month             nan gC/hour             nan gC/hour
+TLAI (t)                  6.566e+00 none          3.977e-01 none          9.149e+00 none          6.510e+00 none          6.648e+00 none                nan none                nan none
+TLAI (b)                  7.068e+00 none          3.977e-01 none          9.495e+00 none          7.020e+00 none          7.145e+00 none                nan none                nan none
+TSAI (t)                  7.597e-01 none          4.052e-02 none          9.772e-01 none          7.241e-01 none          7.950e-01 none                nan none                nan none
+TSAI (b)                  9.088e-01 none          4.070e-02 none          1.165e+00 none          8.756e-01 none          9.418e-01 none                nan none                nan none
+TRIMMING (t)              7.854e-01 none          7.442e-01 none          9.997e-01 none          7.801e-01 none          7.906e-01 none                nan none                nan none
+TRIMMING (b)              8.407e-01 none          7.954e-01 none          9.999e-01 none          8.379e-01 none          8.432e-01 none                nan none                nan none

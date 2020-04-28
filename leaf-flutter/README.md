@@ -2,8 +2,9 @@
 
 ## Jupyter notebook descriptions
 
-- net_uptake-leaf_cost: Original exploratory study notebook
-- issue383-optimum-clai-trim-fraction: Review of output from canopy trim fraction calculation using optimum clai
+- [net_uptake-leaf_cost](https://github.com/glemieux/fates-jupyter/blob/netuptake/leaf-flutter/net_uptake-leaf_cost.ipynb): Original exploratory study notebook
+- [issue383-optimum-clai-trim-fraction](https://github.com/glemieux/fates-jupyter/blob/netuptake/leaf-flutter/issue383-optimum-clai-trim-fraction.ipynb): Review of output from canopy trim fraction calculation using optimum clai
+- [cesmlog-parser](https://github.com/glemieux/fates-jupyter/blob/netuptake/leaf-flutter/cesmlog-parser.ipynb): Script for parsing the cesm log of the `f10_f10_mg37` runs I conducted for determining the reason there was no comparitive differnce in `laimemory` between the normal runs and the optimized calculation
 
 ## Log output (Google Sheet)
 

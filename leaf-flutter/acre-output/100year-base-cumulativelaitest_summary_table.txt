@@ -1,0 +1,37 @@
+Notes:
+MEAN: Mean of yearly means (if available)
+      Mean of monthly means (if next available)
+      Mean of diurnal means (if next available)
+MEAN will accept sparse data (ie ignores nans)
+AMIN: Minimum of yearly means (ignores nans)
+AMAX: Maximum of yearly means (ignores nans)
+MMIN: Minimum of monthly means (nans disqualify)
+MMAX: Maximum of monthly means (nans disqualify)
+DMIN: Minimum of diurnal means (nans disqualify)
+DMAX: Maximum of diurnal means (nans disqualify)
+================================================
+
+BCI, Panama     
+                                    MEAN                    AMIN                    AMAX                    MMIN                    MMAX                    DMIN                    DMAX
+FSH (t)                   4.611e+01 W/m2          3.639e+01 W/m2          6.079e+01 W/m2          3.019e+01 W/m2          7.166e+01 W/m2                nan W/m2                nan W/m2
+FSH (b)                   4.546e+01 W/m2          3.297e+01 W/m2          6.079e+01 W/m2          2.950e+01 W/m2          7.133e+01 W/m2                nan W/m2                nan W/m2
+EFLX_LH_TOT (t)           7.116e+01 W/m2          3.387e+01 W/m2          7.973e+01 W/m2          6.201e+01 W/m2          8.174e+01 W/m2                nan W/m2                nan W/m2
+EFLX_LH_TOT (b)           7.193e+01 W/m2          3.387e+01 W/m2          8.140e+01 W/m2          6.279e+01 W/m2          8.249e+01 W/m2                nan W/m2                nan W/m2
+TSOI_10CM (t)                2.710e+01 C             2.605e+01 C             3.002e+01 C             2.603e+01 C             2.828e+01 C                   nan C                   nan C
+TSOI_10CM (b)                2.699e+01 C             2.585e+01 C             3.002e+01 C             2.595e+01 C             2.814e+01 C                   nan C                   nan C
+QVEGT (t)                 4.551e+01 W/m2          2.133e+00 W/m2          5.337e+01 W/m2          3.285e+01 W/m2          6.043e+01 W/m2                nan W/m2                nan W/m2
+QVEGT (b)                 4.591e+01 W/m2          2.133e+00 W/m2          5.400e+01 W/m2          3.292e+01 W/m2          6.114e+01 W/m2                nan W/m2                nan W/m2
+FLDS (t)                  4.382e+02 W/m2          4.299e+02 W/m2          4.448e+02 W/m2          4.305e+02 W/m2          4.446e+02 W/m2                nan W/m2                nan W/m2
+FLDS (b)                  4.382e+02 W/m2          4.299e+02 W/m2          4.448e+02 W/m2          4.305e+02 W/m2          4.446e+02 W/m2                nan W/m2                nan W/m2
+FSDS (t)                  1.802e+02 W/m2          1.648e+02 W/m2          1.947e+02 W/m2          1.416e+02 W/m2          2.308e+02 W/m2                nan W/m2                nan W/m2
+FSDS (b)                  1.802e+02 W/m2          1.648e+02 W/m2          1.947e+02 W/m2          1.416e+02 W/m2          2.308e+02 W/m2                nan W/m2                nan W/m2
+RAIN (t)                    2.385e+03 mm            1.670e+03 mm            3.477e+03 mm            2.788e+01 mm            4.555e+02 mm               nan mm/hr               nan mm/hr
+RAIN (b)                    2.385e+03 mm            1.670e+03 mm            3.477e+03 mm            2.788e+01 mm            4.555e+02 mm               nan mm/hr               nan mm/hr
+NPP (t)               1.417e+00 kgC/year      4.832e-02 kgC/year      1.572e+00 kgC/year     9.395e-02 kgC/month     1.266e-01 kgC/month             nan gC/hour             nan gC/hour
+NPP (b)               1.421e+00 kgC/year      4.830e-02 kgC/year      1.568e+00 kgC/year     9.396e-02 kgC/month     1.271e-01 kgC/month             nan gC/hour             nan gC/hour
+TLAI (t)                  6.386e+00 none          3.977e-01 none          8.341e+00 none          6.376e+00 none          6.400e+00 none                nan none                nan none
+TLAI (b)                  6.850e+00 none          3.977e-01 none          9.495e+00 none          6.836e+00 none          6.905e+00 none                nan none                nan none
+TSAI (t)                  9.260e-01 none          4.052e-02 none          1.018e+00 none          9.098e-01 none          9.412e-01 none                nan none                nan none
+TSAI (b)                  9.938e-01 none          4.070e-02 none          1.165e+00 none          9.781e-01 none          1.010e+00 none                nan none                nan none
+TRIMMING (t)              7.729e-01 none          5.841e-01 none          9.997e-01 none          7.705e-01 none          7.752e-01 none                nan none                nan none
+TRIMMING (b)              8.297e-01 none          7.950e-01 none          9.999e-01 none          8.284e-01 none          8.310e-01 none                nan none                nan none

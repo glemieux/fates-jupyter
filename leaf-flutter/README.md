@@ -1,4 +1,4 @@
-# Issue 383 study
+# [Issue 383](https://github.com/NGEET/fates/issues/383) study
 
 ## Jupyter Notebook
 

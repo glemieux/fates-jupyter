@@ -1,17 +1,11 @@
-# Issue 383 study
+# [Issue 383](https://github.com/NGEET/fates/issues/383) study
 
-## ACRE comparison plots
+## Jupyter Notebook
 
-See the [ACRE-comparison folder](https://github.com/glemieux/fates-jupyter/tree/netuptake/leaf-flutter/ACRE-output) for acre-comparison plots and output. 
+[issue383-optimum-clai-trim-fraction](https://github.com/glemieux/fates-jupyter/blob/master/leaf-flutter/issue383-optimum-clai-trim-fraction.ipynb): Review of output from canopy trim fraction calculation using optimum clai
 
-## Descriptions
+## Folder descriptions
 
-[issue383-optimum-clai-trim-fraction](https://github.com/glemieux/fates-jupyter/blob/netuptake/leaf-flutter/issue383-optimum-clai-trim-fraction.ipynb): Review of output from canopy trim fraction calculation using optimum clai
-
-
-
-## Deciduous analysis
-
-## Scratch files
-
-See the [scratch folder](https://github.com/glemieux/fates-jupyter/tree/netuptake/leaf-flutter/scratch) for the initial scratch work
+- [ACRE-comparison folder](https://github.com/glemieux/fates-jupyter/tree/master/leaf-flutter/ACRE-output): BCI site level acre-comparison plots and output. 
+- [Deciduous analysis](https://github.com/glemieux/fates-jupyter/tree/master/leaf-flutter/deciduous): Exploration of decidious `laimemory` calculation results
+- [Scratch folder](https://github.com/glemieux/fates-jupyter/tree/master/leaf-flutter/scratch): initial scratch work notebooks

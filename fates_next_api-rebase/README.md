@@ -24,10 +24,20 @@ This folder contains supporting materials for validation of the rebase effort to
 ### C. fates_next_api (`sci.1.40.2`) versus fates_next_api (`sci.1.30.0`)
 
 - Purpose: what changed in the fates output between 1.30.0 and 1.40.2?
-    - Run to compare the fates specific output of test suite [B.](###B)
+    - Run to compare the fates specific output of test suite [B.](#b-fates_main_api-sci1402-versus-ctsm10dev093sci1300)
 - How: Manually DIFF the fates_next_api baselines against each other
 - Location: `/glade/u/home/glemieux/scratch/fma-diffs/fates-sci.1.40.2_api.13.0.1-fates-sci-1.30.0_api.8.0.0`
-- Conclusion:
+- Conclusion: 
+    - Comparing test DIFFs between C. and B.
+        - The main limitation in comparing the test sets is there is little overlap in the gridsets used for both suites.
+            - `1x1_brazil` and `f45_f45_mg37` are the only overlaps
+        - Note that all `aux_clm` fates test use the testmod 'FatesColdDef'.  This furhter limits the set of tests to compare.
+        - The `aux_clm` fates tests are either SMS or ERS tests
+        - As a result of the above, the closest match between the `fates` suite and `aux_clm` suite tests is:
+          `ERS_D_Mmpi-serial_Ld5.1x1_brazil.I2000Clm50FatesGs.cheyenne_intel.clm-FatesColdDef`
+                - Note that the atmospheric data set is different between the two however.
+        - Comparison of the RMS values can be found here, although results are not entirely supportive of a specific hypothesis: https://docs.google.com/spreadsheets/d/1RlVrx0y7MW4jIZpSl3FB-wnHJiCTbYNZQ_5jn8jk9Kc/edit?usp=sharing 
+        
 
 ## Long-term tests (100 year)
 

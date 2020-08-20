@@ -50,7 +50,7 @@ This folder contains supporting materials for validation of the rebase effort to
         - Test 1 (sci.1.36.0_api.11.2.0): `/home/glemieux/scratch/clmed-cases/fna-rebase.C024b43a8-F7c065e21.2020-07-27`
         - Test 2 (sci.1.40.1_api.13.0.1): `/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cd6ef097c-F3248e633.2020-08-05`
 
-### Gridded run test: f10 grid
+### Gridded run test: `f10_f10_mg37` grid
 
 The gridded runs were conducted with fates tag `sci.1.40.3_api.13.0.1`
 

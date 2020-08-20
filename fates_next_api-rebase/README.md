@@ -33,9 +33,8 @@ This folder contains supporting materials for validation of the rebase effort to
             - `1x1_brazil` and `f45_f45_mg37` are the only overlaps
         - Note that all `aux_clm` fates test use the testmod 'FatesColdDef'.  This furhter limits the set of tests to compare.
         - The `aux_clm` fates tests are either SMS or ERS tests
-        - As a result of the above, the closest match between the `fates` suite and `aux_clm` suite tests is:
-          `ERS_D_Mmpi-serial_Ld5.1x1_brazil.I2000Clm50FatesGs.cheyenne_intel.clm-FatesColdDef`
-                - Note that the atmospheric data set is different between the two however.
+        - As a result of the above, the closest match between the `fates` suite and `aux_clm` suite tests is: `ERS_D_Mmpi-serial_Ld5.1x1_brazil.I2000Clm50FatesGs.cheyenne_intel.clm-FatesColdDef`
+              - Note that the atmospheric data set is different between the two however.
         - Comparison of the RMS values can be found here, although results are not entirely supportive of a specific hypothesis: https://docs.google.com/spreadsheets/d/1RlVrx0y7MW4jIZpSl3FB-wnHJiCTbYNZQ_5jn8jk9Kc/edit?usp=sharing 
         
 
@@ -44,10 +43,16 @@ This folder contains supporting materials for validation of the rebase effort to
 ### Single site test: BCI
 
 - Case location: lobata workstation
-    - Baseline: `/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cabcd5937-F3248e633.2020-08-05`
-    - Test: `/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cd6ef097c-F3248e633.2020-08-05`
+    - fates_next_api baselines:
+        - Baseline 1 (sci.1.36.0_api.11.2.0): `/home/glemieux/scratch/clmed-cases/fna-rebase.Ce33b4658-F7c065e21.2020-07-27`
+        - Baseline 2 (sci.1.40.1_api.13.0.1): `/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cabcd5937-F3248e633.2020-08-05`
+    - fates_main_api tests: 
+        - Test 1 (sci.1.36.0_api.11.2.0): `/home/glemieux/scratch/clmed-cases/fna-rebase.C024b43a8-F7c065e21.2020-07-27`
+        - Test 2 (sci.1.40.1_api.13.0.1): `/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cd6ef097c-F3248e633.2020-08-05`
 
 ### Gridded run test: f10 grid
+
+The gridded runs were conducted with fates tag `sci.1.40.3_api.13.0.1`
 
 - Case location: cheyenne
     - Baseline: `/glade/u/home/glemieux/scratch/clmed-tests/fates_next_api-100_year.fates.cheyenne.Cabcd5937-F6bfea0f8`

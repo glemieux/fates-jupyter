@@ -52,6 +52,8 @@ This folder contains supporting materials for validation of the rebase effort to
 
 ### Gridded run test: f10 grid
 
+The gridded runs were conducted with fates tag `sci.1.40.3_api.13.0.1`
+
 - Case location: cheyenne
     - Baseline: `/glade/u/home/glemieux/scratch/clmed-tests/fates_next_api-100_year.fates.cheyenne.Cabcd5937-F6bfea0f8`
     - Test: `/glade/u/home/glemieux/scratch/clmed-tests/fates_main_api-100_year.fates.cheyenne.Cc56788f3-F6bfea0f8`

@@ -1,0 +1,41 @@
+Notes:
+MEAN: Mean of yearly means (if available)
+      Mean of monthly means (if next available)
+      Mean of diurnal means (if next available)
+MEAN will accept sparse data (ie ignores nans)
+AMIN: Minimum of yearly means (ignores nans)
+AMAX: Maximum of yearly means (ignores nans)
+MMIN: Minimum of monthly means (nans disqualify)
+MMAX: Maximum of monthly means (nans disqualify)
+DMIN: Minimum of diurnal means (nans disqualify)
+DMAX: Maximum of diurnal means (nans disqualify)
+================================================
+
+BCI, Panama     
+                                    MEAN                    AMIN                    AMAX                    MMIN                    MMAX                    DMIN                    DMAX
+FSH (t)                   3.606e+01 W/m2          2.417e+01 W/m2          5.974e+01 W/m2          2.181e+01 W/m2          7.247e+01 W/m2                nan W/m2                nan W/m2
+FSH (b)                   3.603e+01 W/m2          2.420e+01 W/m2          5.998e+01 W/m2          2.172e+01 W/m2          7.292e+01 W/m2                nan W/m2                nan W/m2
+EFLX_LH_TOT (t)           8.498e+01 W/m2          4.054e+01 W/m2          9.610e+01 W/m2          7.342e+01 W/m2          1.034e+02 W/m2                nan W/m2                nan W/m2
+EFLX_LH_TOT (b)           8.500e+01 W/m2          4.001e+01 W/m2          9.620e+01 W/m2          7.354e+01 W/m2          1.034e+02 W/m2                nan W/m2                nan W/m2
+TSOI_10CM (t)                2.767e+01 C             2.712e+01 C             2.958e+01 C             2.641e+01 C             2.917e+01 C                   nan C                   nan C
+TSOI_10CM (b)                2.769e+01 C             2.714e+01 C             2.964e+01 C             2.643e+01 C             2.919e+01 C                   nan C                   nan C
+QVEGT (t)                 5.876e+01 W/m2          1.047e+01 W/m2          6.887e+01 W/m2          4.449e+01 W/m2          7.987e+01 W/m2                nan W/m2                nan W/m2
+QVEGT (b)                 5.880e+01 W/m2          1.003e+01 W/m2          6.923e+01 W/m2          4.467e+01 W/m2          7.996e+01 W/m2                nan W/m2                nan W/m2
+FLDS (t)                  4.382e+02 W/m2          4.299e+02 W/m2          4.448e+02 W/m2          4.306e+02 W/m2          4.445e+02 W/m2                nan W/m2                nan W/m2
+FLDS (b)                  4.382e+02 W/m2          4.299e+02 W/m2          4.448e+02 W/m2          4.306e+02 W/m2          4.445e+02 W/m2                nan W/m2                nan W/m2
+FSDS (t)                  1.802e+02 W/m2          1.648e+02 W/m2          1.947e+02 W/m2          1.414e+02 W/m2          2.302e+02 W/m2                nan W/m2                nan W/m2
+FSDS (b)                  1.802e+02 W/m2          1.648e+02 W/m2          1.947e+02 W/m2          1.414e+02 W/m2          2.302e+02 W/m2                nan W/m2                nan W/m2
+RAIN (t)                    2.386e+03 mm            1.670e+03 mm            3.477e+03 mm            2.817e+01 mm            4.587e+02 mm               nan mm/hr               nan mm/hr
+RAIN (b)                    2.386e+03 mm            1.670e+03 mm            3.477e+03 mm            2.817e+01 mm            4.587e+02 mm               nan mm/hr               nan mm/hr
+NPP (t)               1.431e+00 kgC/year      3.499e-01 kgC/year      1.826e+00 kgC/year     6.331e-02 kgC/month     1.472e-01 kgC/month             nan gC/hour             nan gC/hour
+NPP (b)               1.433e+00 kgC/year      3.300e-01 kgC/year      1.806e+00 kgC/year     6.163e-02 kgC/month     1.475e-01 kgC/month             nan gC/hour             nan gC/hour
+MORTALITY_CARBONFLUX_CANOPY (t)          5.684e-06 none          3.995e-07 none          1.354e-05 none          4.959e-06 none          9.531e-06 none                nan none                nan none
+MORTALITY_CARBONFLUX_CANOPY (b)          5.679e-06 none          3.943e-07 none          1.300e-05 none          4.881e-06 none          9.927e-06 none                nan none                nan none
+AGB (t)                   5.872e+03 none          7.485e+01 none          9.509e+03 none          5.828e+03 none          5.930e+03 none                nan none                nan none
+AGB (b)                   5.861e+03 none          7.295e+01 none          9.514e+03 none          5.815e+03 none          5.920e+03 none                nan none                nan none
+TLAI (t)                  5.572e+00 none          7.880e-01 none          6.661e+00 none          5.539e+00 none          5.606e+00 none                nan none                nan none
+TLAI (b)                  5.562e+00 none          7.651e-01 none          6.551e+00 none          5.524e+00 none          5.595e+00 none                nan none                nan none
+TSAI (t)                  6.388e-01 none          7.886e-02 none          8.061e-01 none          6.327e-01 none          6.451e-01 none                nan none                nan none
+TSAI (b)                  6.366e-01 none          7.657e-02 none          7.886e-01 none          6.296e-01 none          6.428e-01 none                nan none                nan none
+TRIMMING (t)              9.187e-01 none          7.355e-01 none          9.862e-01 none          9.182e-01 none          9.196e-01 none                nan none                nan none
+TRIMMING (b)              9.172e-01 none          7.467e-01 none          9.876e-01 none          9.164e-01 none          9.177e-01 none                nan none                nan none

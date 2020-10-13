@@ -26,6 +26,9 @@ This folder contains supporting materials for validation of the rebase effort to
 - Purpose: what changed in the fates output between 1.30.0 and 1.40.2?
     - Run to compare the fates specific output of test suite [B.](#b-fates_main_api-sci1402-versus-ctsm10dev093sci1300)
 - How: Manually DIFF the fates_next_api baselines against each other
+    - Baseline locations:
+        - `/glade/p/cgd/tss/ctsm_baselines/fates-sci.1.40.2_api.13.0.1-clm5.0.30-Cabcd5937-F0a7f69cb.fates.cheyenne.intel`
+        - `/glade/p/cgd/tss/ctsm_baselines/fates-sci-1.30.0_api.8.0.0-C9651c6d0-F3f6749d4.fates.cheyenne.intel`
 - Location: `/glade/u/home/glemieux/scratch/fma-diffs/fates-sci.1.40.2_api.13.0.1-fates-sci-1.30.0_api.8.0.0`
 - Conclusion: 
     - Comparing test DIFFs between C. and B.

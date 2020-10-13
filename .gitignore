@@ -1,0 +1,5 @@
+# History output
+*.nc
+
+# Jupyter
+.ipynb_checkpoints

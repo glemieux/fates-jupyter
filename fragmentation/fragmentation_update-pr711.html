@@ -1,0 +1,956 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PR 711 test and baseline comparison &#8212; FATES development notebooks</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fates_next_api rebase into ctsm1.0.dev093" href="../fates_next_api-rebase/README.html" />
+    <link rel="prev" title="Update of fragmentation scalar to use HLM temperature and moisture scalars" href="fragmentation_update-base_compare.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ngeet.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">FATES development notebooks</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   FATES development notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  California
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../california/README.html">
+   California FATES development
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../california/new-dimension-age_by_fuel.html">
+     Checking age x fuel size class dimension
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Fragmentation
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   FATES-HLM fragmentation scalar implementation
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fragmentation_update-base_compare.html">
+     Update of fragmentation scalar to use HLM temperature and moisture scalars
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     PR 711 test and baseline comparison
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  FATES_MAIN_API
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../fates_next_api-rebase/README.html">
+   fates_next_api rebase into ctsm1.0.dev093
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fates_next_api-rebase/fates_next_api-rebase-notebook.html">
+     fates_next_api rebase into ctsm1.0.dev093
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Leaf Flutter
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../leaf-flutter/README.html">
+   Issue 383 study
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../leaf-flutter/issue383-optimum-clai-trim-fraction.html">
+     Issue 383 Optimum LAI versus trim increment
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../leaf-flutter/deciduous/README.html">
+     Deciduous test analysis
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../leaf-flutter/deciduous/cesmlog-parser.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         laimemory
+        </span>
+       </code>
+       CESM log output
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/fragmentation/fragmentation_update-pr711.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/glemieux/fates-jupyter"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/glemieux/fates-jupyter/master?urlpath=tree/docs/fragmentation/fragmentation_update-pr711.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-libraries">
+   Import libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-history-output-data">
+   Load history output data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-data-subsets">
+   Select data subsets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-the-data">
+   Plot the data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#global-plots">
+     Global plots
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pr-711-test-and-baseline-comparison">
+<h1>PR 711 test and baseline comparison<a class="headerlink" href="#pr-711-test-and-baseline-comparison" title="Permalink to this headline">¶</a></h1>
+<p>This jupyter notebook compares the results of PR 711, which fixes an issue discoved while updating the history output variable added in PR 694.  It was found that <code class="docutils literal notranslate"><span class="pre">fragmentation_scaler</span></code> was not being initialized to zero during new patch formation.</p>
+<ul class="simple">
+<li><p>Pull request: https://github.com/NGEET/fates/pull/711</p></li>
+</ul>
+<div class="section" id="import-libraries">
+<h2>Import libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-history-output-data">
+<h2>Load history output data<a class="headerlink" href="#load-history-output-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename_history_fix</span> <span class="o">=</span> <span class="s1">&#39;data/frag-hist-fix-true.nc&#39;</span> <span class="c1"># Test data</span>
+<span class="n">filename_history_frag</span> <span class="o">=</span> <span class="s1">&#39;data/frag-retest-10year-test.nc&#39;</span> <span class="c1"># PR 705 Test data (new baseline)</span>
+<span class="n">filename_history_base</span> <span class="o">=</span> <span class="s1">&#39;data/frag-retest-10year-base.nc&#39;</span> <span class="c1"># Pre-705 baseline data</span>
+<span class="n">data_fix</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename_history_fix</span><span class="p">)</span>
+<span class="n">data_frag</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename_history_frag</span><span class="p">)</span>
+<span class="n">data_base</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename_history_base</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="select-data-subsets">
+<h2>Select data subsets<a class="headerlink" href="#select-data-subsets" title="Permalink to this headline">¶</a></h2>
+<p>Above ground coarse woody debris</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">litter_cwd_ag_fix</span>  <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">LITTER_CWD_AG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_cwd_ag_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">LITTER_CWD_AG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_cwd_ag_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">LITTER_CWD_AG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_cwd_ag_diff</span> <span class="o">=</span> <span class="n">litter_cwd_ag_frag</span> <span class="o">-</span> <span class="n">litter_cwd_ag_base</span>
+<span class="n">litter_cwd_ag_dfix</span> <span class="o">=</span> <span class="n">litter_cwd_ag_fix</span> <span class="o">-</span> <span class="n">litter_cwd_ag_frag</span>
+<span class="n">litter_cwd_ag_bfix</span> <span class="o">=</span> <span class="n">litter_cwd_ag_fix</span> <span class="o">-</span> <span class="n">litter_cwd_ag_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below ground coarse woody debris</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">litter_cwd_bg_fix</span>  <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">LITTER_CWD_BG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_cwd_bg_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">LITTER_CWD_BG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_cwd_bg_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">LITTER_CWD_BG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_cwd_bg_diff</span> <span class="o">=</span> <span class="n">litter_cwd_bg_frag</span> <span class="o">-</span> <span class="n">litter_cwd_bg_base</span>
+<span class="n">litter_cwd_bg_dfix</span> <span class="o">=</span> <span class="n">litter_cwd_bg_fix</span> <span class="o">-</span> <span class="n">litter_cwd_bg_frag</span>
+<span class="n">litter_cwd_bg_bfix</span> <span class="o">=</span> <span class="n">litter_cwd_bg_fix</span> <span class="o">-</span> <span class="n">litter_cwd_bg_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above ground fines (leaf)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">litter_fines_ag_fix</span>  <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">LITTER_FINES_AG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_fines_ag_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">LITTER_FINES_AG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_fines_ag_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">LITTER_FINES_AG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_fines_ag_diff</span> <span class="o">=</span> <span class="n">litter_fines_ag_frag</span> <span class="o">-</span> <span class="n">litter_fines_ag_base</span>
+<span class="n">litter_fines_ag_dfix</span> <span class="o">=</span> <span class="n">litter_fines_ag_fix</span> <span class="o">-</span> <span class="n">litter_fines_ag_frag</span>
+<span class="n">litter_fines_ag_bfix</span> <span class="o">=</span> <span class="n">litter_fines_ag_fix</span> <span class="o">-</span> <span class="n">litter_fines_ag_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below ground fines (root)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">litter_fines_bg_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">LITTER_FINES_BG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_fines_bg_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">LITTER_FINES_BG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_fines_bg_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">LITTER_FINES_BG_ELEM</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">fates_levelem</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">litter_fines_bg_diff</span> <span class="o">=</span> <span class="n">litter_fines_bg_frag</span> <span class="o">-</span> <span class="n">litter_fines_bg_base</span>
+<span class="n">litter_fines_bg_dfix</span> <span class="o">=</span> <span class="n">litter_fines_bg_fix</span> <span class="o">-</span> <span class="n">litter_fines_bg_frag</span>
+<span class="n">litter_fines_bg_bfix</span> <span class="o">=</span> <span class="n">litter_fines_bg_fix</span> <span class="o">-</span> <span class="n">litter_fines_bg_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fuel intensity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuel_intensity_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">FIRE_INTENSITY</span>
+<span class="n">fuel_intensity_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">FIRE_INTENSITY</span>
+<span class="n">fuel_intensity_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">FIRE_INTENSITY</span>
+<span class="n">fuel_intensity_diff</span> <span class="o">=</span> <span class="n">fuel_intensity_frag</span> <span class="o">-</span> <span class="n">fuel_intensity_base</span>
+<span class="n">fuel_intensity_dfix</span> <span class="o">=</span> <span class="n">fuel_intensity_fix</span> <span class="o">-</span> <span class="n">fuel_intensity_frag</span>
+<span class="n">fuel_intensity_bfix</span> <span class="o">=</span> <span class="n">fuel_intensity_fix</span> <span class="o">-</span> <span class="n">fuel_intensity_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fuel surface/volume</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuel_sav_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">FIRE_FUEL_SAV</span>
+<span class="n">fuel_sav_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">FIRE_FUEL_SAV</span>
+<span class="n">fuel_sav_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">FIRE_FUEL_SAV</span>
+<span class="n">fuel_sav_diff</span> <span class="o">=</span> <span class="n">fuel_sav_frag</span> <span class="o">-</span> <span class="n">fuel_sav_base</span>
+<span class="n">fuel_sav_dfix</span> <span class="o">=</span> <span class="n">fuel_sav_fix</span> <span class="o">-</span> <span class="n">fuel_sav_frag</span>
+<span class="n">fuel_sav_bfix</span> <span class="o">=</span> <span class="n">fuel_sav_fix</span> <span class="o">-</span> <span class="n">fuel_sav_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Effective Fuel moisture</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuel_eff_moist_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">FIRE_FUEL_EFF_MOIST</span>
+<span class="n">fuel_eff_moist_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">FIRE_FUEL_EFF_MOIST</span>
+<span class="n">fuel_eff_moist_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">FIRE_FUEL_EFF_MOIST</span>
+<span class="n">fuel_eff_moist_diff</span> <span class="o">=</span> <span class="n">fuel_eff_moist_frag</span> <span class="o">-</span> <span class="n">fuel_eff_moist_base</span>
+<span class="n">fuel_eff_moist_dfix</span> <span class="o">=</span> <span class="n">fuel_eff_moist_fix</span> <span class="o">-</span> <span class="n">fuel_eff_moist_frag</span>
+<span class="n">fuel_eff_moist_bfix</span> <span class="o">=</span> <span class="n">fuel_eff_moist_fix</span> <span class="o">-</span> <span class="n">fuel_eff_moist_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fuel bulk density</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuel_bulkd_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">FIRE_FUEL_BULKD</span>
+<span class="n">fuel_bulkd_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">FIRE_FUEL_BULKD</span>
+<span class="n">fuel_bulkd_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">FIRE_FUEL_BULKD</span>
+<span class="n">fuel_bulkd_diff</span> <span class="o">=</span> <span class="n">fuel_bulkd_frag</span> <span class="o">-</span> <span class="n">fuel_bulkd_base</span>
+<span class="n">fuel_bulkd_dfix</span> <span class="o">=</span> <span class="n">fuel_bulkd_fix</span> <span class="o">-</span> <span class="n">fuel_bulkd_frag</span>
+<span class="n">fuel_bulkd_bfix</span> <span class="o">=</span> <span class="n">fuel_bulkd_fix</span> <span class="o">-</span> <span class="n">fuel_bulkd_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fuel moisture (MEF)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuel_mef_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">FIRE_FUEL_MEF</span>
+<span class="n">fuel_mef_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">FIRE_FUEL_MEF</span>
+<span class="n">fuel_mef_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">FIRE_FUEL_MEF</span>
+<span class="n">fuel_mef_diff</span> <span class="o">=</span> <span class="n">fuel_mef_frag</span> <span class="o">-</span> <span class="n">fuel_mef_base</span>
+<span class="n">fuel_mef_dfix</span> <span class="o">=</span> <span class="n">fuel_mef_fix</span> <span class="o">-</span> <span class="n">fuel_mef_frag</span>
+<span class="n">fuel_mef_bfix</span> <span class="o">=</span> <span class="n">fuel_mef_fix</span> <span class="o">-</span> <span class="n">fuel_mef_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ground fuel within each patch age bin</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># divide this by patch_area_by_age to get fuel per?</span>
+<span class="n">sum_fuel_pa_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">SUM_FUEL_BY_PATCH_AGE</span>
+<span class="n">sum_fuel_pa_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">SUM_FUEL_BY_PATCH_AGE</span>
+<span class="n">sum_fuel_pa_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">SUM_FUEL_BY_PATCH_AGE</span>
+<span class="n">sum_fuel_pa_diff</span> <span class="o">=</span> <span class="n">sum_fuel_pa_frag</span> <span class="o">-</span> <span class="n">sum_fuel_pa_base</span>
+<span class="n">sum_fuel_pa_dfix</span> <span class="o">=</span> <span class="n">sum_fuel_pa_fix</span> <span class="o">-</span> <span class="n">sum_fuel_pa_frag</span>
+<span class="n">sum_fuel_pa_bfix</span> <span class="o">=</span> <span class="n">sum_fuel_pa_fix</span> <span class="o">-</span> <span class="n">sum_fuel_pa_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Total ground fuel</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_fuel_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">SUM_FUEL</span>
+<span class="n">sum_fuel_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">SUM_FUEL</span>
+<span class="n">sum_fuel_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">SUM_FUEL</span>
+<span class="n">sum_fuel_diff</span> <span class="o">=</span> <span class="n">sum_fuel_frag</span> <span class="o">-</span> <span class="n">sum_fuel_base</span>
+<span class="n">sum_fuel_dfix</span> <span class="o">=</span> <span class="n">sum_fuel_fix</span> <span class="o">-</span> <span class="n">sum_fuel_frag</span>
+<span class="n">sum_fuel_bfix</span> <span class="o">=</span> <span class="n">sum_fuel_fix</span> <span class="o">-</span> <span class="n">sum_fuel_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Corrected fire intensity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fire_intensity_corr_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">FIRE_INTENSITY_AREA_PRODUCT</span> <span class="o">/</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">FIRE_AREA</span>
+<span class="n">fire_intensity_corr_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">FIRE_INTENSITY_AREA_PRODUCT</span> <span class="o">/</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">FIRE_AREA</span>
+<span class="n">fire_intensity_corr_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">FIRE_INTENSITY_AREA_PRODUCT</span> <span class="o">/</span> <span class="n">data_base</span><span class="o">.</span><span class="n">FIRE_AREA</span>
+<span class="n">fire_intensity_corr_diff</span> <span class="o">=</span> <span class="n">fire_intensity_corr_frag</span> <span class="o">-</span> <span class="n">fire_intensity_corr_base</span>
+<span class="n">fire_intensity_corr_dfix</span> <span class="o">=</span> <span class="n">fire_intensity_corr_fix</span> <span class="o">-</span> <span class="n">fire_intensity_corr_frag</span>
+<span class="n">fire_intensity_corr_bfix</span> <span class="o">=</span> <span class="n">fire_intensity_corr_fix</span> <span class="o">-</span> <span class="n">fire_intensity_corr_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fuel moisture (size-resolved)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fuel_moist_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">FUEL_MOISTURE_NFSC</span>
+<span class="n">fuel_moist_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">FUEL_MOISTURE_NFSC</span>
+<span class="n">fuel_moist_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">FUEL_MOISTURE_NFSC</span>
+<span class="n">fuel_moist_diff</span> <span class="o">=</span> <span class="n">fuel_moist_frag</span> <span class="o">-</span> <span class="n">fuel_moist_base</span>
+<span class="n">fuel_moist_dfix</span> <span class="o">=</span> <span class="n">fuel_moist_fix</span> <span class="o">-</span> <span class="n">fuel_moist_frag</span>
+<span class="n">fuel_moist_bfix</span> <span class="o">=</span> <span class="n">fuel_moist_fix</span> <span class="o">-</span> <span class="n">fuel_moist_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Number of patches</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">npatches_fix</span> <span class="o">=</span> <span class="n">data_fix</span><span class="o">.</span><span class="n">ED_NPATCHES</span>
+<span class="n">npatches_frag</span> <span class="o">=</span> <span class="n">data_frag</span><span class="o">.</span><span class="n">ED_NPATCHES</span>
+<span class="n">npatches_base</span> <span class="o">=</span> <span class="n">data_base</span><span class="o">.</span><span class="n">ED_NPATCHES</span>
+<span class="n">npatches_diff</span> <span class="o">=</span> <span class="n">npatches_frag</span> <span class="o">-</span> <span class="n">npatches_base</span>
+<span class="n">npatches_dfix</span> <span class="o">=</span> <span class="n">npatches_fix</span> <span class="o">-</span> <span class="n">npatches_frag</span>
+<span class="n">npatches_bfix</span> <span class="o">=</span> <span class="n">npatches_fix</span> <span class="o">-</span> <span class="n">npatches_base</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-data">
+<h2>Plot the data<a class="headerlink" href="#plot-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="global-plots">
+<h3>Global plots<a class="headerlink" href="#global-plots" title="Permalink to this headline">¶</a></h3>
+<p>Above ground coarse woody debris</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">litter_cwd_ag_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">);</span>
+<span class="n">litter_cwd_ag_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
+<span class="n">litter_cwd_ag_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_39_0.png" src="../_images/fragmentation_update-pr711_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that the data is B4B in the time range tested by the regression</span>
+<span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">13</span> <span class="c1"># months</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">litter_cwd_ag_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">);</span>
+<span class="n">litter_cwd_ag_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
+<span class="n">litter_cwd_ag_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_40_0.png" src="../_images/fragmentation_update-pr711_40_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that the number of patches prior to year two are the same</span>
+<span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">npatches_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">);</span>
+<span class="n">npatches_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
+<span class="n">npatches_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_41_0.png" src="../_images/fragmentation_update-pr711_41_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show number of patches at end of 10 years</span>
+<span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">npatches_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">);</span>
+<span class="n">npatches_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
+<span class="n">npatches_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_42_0.png" src="../_images/fragmentation_update-pr711_42_0.png" />
+</div>
+</div>
+<p>Below ground coarse woody debris</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">litter_cwd_bg_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">litter_cwd_bg_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">litter_cwd_bg_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_44_0.png" src="../_images/fragmentation_update-pr711_44_0.png" />
+</div>
+</div>
+<p>Above ground fines (leaf)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">litter_fines_ag_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">litter_fines_ag_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">litter_fines_ag_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">);</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_46_0.png" src="../_images/fragmentation_update-pr711_46_0.png" />
+</div>
+</div>
+<p>Below ground fines (root)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">litter_fines_bg_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">litter_fines_bg_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">litter_fines_bg_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">);</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_48_0.png" src="../_images/fragmentation_update-pr711_48_0.png" />
+</div>
+</div>
+<p>Fuel intensity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">fuel_intensity_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">fuel_intensity_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">fuel_intensity_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Diff against PR 705&#39;)
+</pre></div>
+</div>
+<img alt="../_images/fragmentation_update-pr711_50_1.png" src="../_images/fragmentation_update-pr711_50_1.png" />
+</div>
+</div>
+<p>Fuel surface/volume</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">fuel_sav_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">fuel_sav_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">fuel_sav_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_52_0.png" src="../_images/fragmentation_update-pr711_52_0.png" />
+</div>
+</div>
+<p>Effective Fuel moisture</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">fuel_eff_moist_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">fuel_eff_moist_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">fuel_eff_moist_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_54_0.png" src="../_images/fragmentation_update-pr711_54_0.png" />
+</div>
+</div>
+<p>Fuel bulk density</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">fuel_bulkd_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">fuel_bulkd_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">fuel_bulkd_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Diff against PR 705&#39;)
+</pre></div>
+</div>
+<img alt="../_images/fragmentation_update-pr711_56_1.png" src="../_images/fragmentation_update-pr711_56_1.png" />
+</div>
+</div>
+<p>Fuel moisture (MEF)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">fuel_mef_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">fuel_mef_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">fuel_mef_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Diff against PR 705&#39;)
+</pre></div>
+</div>
+<img alt="../_images/fragmentation_update-pr711_58_1.png" src="../_images/fragmentation_update-pr711_58_1.png" />
+</div>
+</div>
+<p>Ground fuel within each patch age bin</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">fg</span> <span class="o">=</span> <span class="n">sum_fuel_pa_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+                            <span class="n">col</span><span class="o">=</span><span class="s1">&#39;fates_levage&#39;</span><span class="p">,</span> <span class="n">col_wrap</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
+                            <span class="n">subplot_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()})</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">fg</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/gregorylemieux/local/miniconda3/envs/lbl_py3.8/lib/python3.8/site-packages/xarray/plot/facetgrid.py:373: UserWarning: Tight layout not applied. tight_layout cannot make axes width small enough to accommodate all axes decorations
+  self.fig.tight_layout()
+</pre></div>
+</div>
+<img alt="../_images/fragmentation_update-pr711_60_1.png" src="../_images/fragmentation_update-pr711_60_1.png" />
+</div>
+</div>
+<p>Ground fuel within each patch age bin (diff against original baseline)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sum_fuel_pa_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">sum_fuel_pa_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">sum_fuel_pa_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711 fates_levage=3&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_62_0.png" src="../_images/fragmentation_update-pr711_62_0.png" />
+</div>
+</div>
+<p>Total ground fuel</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sum_fuel_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">sum_fuel_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">sum_fuel_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_64_0.png" src="../_images/fragmentation_update-pr711_64_0.png" />
+</div>
+</div>
+<p>Corrected fire intensity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">fire_intensity_corr_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">fire_intensity_corr_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">fire_intensity_corr_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_66_0.png" src="../_images/fragmentation_update-pr711_66_0.png" />
+</div>
+</div>
+<p>Fuel moisture</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">fg</span> <span class="o">=</span> <span class="n">fuel_moist_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+                            <span class="n">col</span><span class="o">=</span><span class="s1">&#39;fates_levfuel&#39;</span><span class="p">,</span> <span class="n">col_wrap</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
+                            <span class="n">subplot_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()})</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">fg</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_68_0.png" src="../_images/fragmentation_update-pr711_68_0.png" />
+</div>
+</div>
+<p>Fuel moisture (diff against PR 705)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sum_fuel_pa_fix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">sum_fuel_pa_bfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+<span class="n">sum_fuel_pa_dfix</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PR 711 fates_levage=0&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against original baseline&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff against PR 705&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fragmentation_update-pr711_70_0.png" src="../_images/fragmentation_update-pr711_70_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./fragmentation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="fragmentation_update-base_compare.html" title="previous page">Update of fragmentation scalar to use HLM temperature and moisture scalars</a>
+    <a class='right-next' id="next-link" href="../fates_next_api-rebase/README.html" title="next page">fates_next_api rebase into ctsm1.0.dev093</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gregory Lemieux<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

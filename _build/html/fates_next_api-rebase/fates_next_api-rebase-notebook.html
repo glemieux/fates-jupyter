@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fates_next_api rebase into ctsm1.0.dev093 &#8212; FATES development notebooks</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Issue 383 study" href="../leaf-flutter/README.html" />
+    <link rel="prev" title="fates_next_api rebase into ctsm1.0.dev093" href="README.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ngeet.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">FATES development notebooks</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   FATES development notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  California
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../california/README.html">
+   California FATES development
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../california/new-dimension-age_by_fuel.html">
+     Checking age x fuel size class dimension
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Fragmentation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../fragmentation/README.html">
+   FATES-HLM fragmentation scalar implementation
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fragmentation/fragmentation_update-base_compare.html">
+     Update of fragmentation scalar to use HLM temperature and moisture scalars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fragmentation/fragmentation_update-pr711.html">
+     PR 711 test and baseline comparison
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  FATES_MAIN_API
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="README.html">
+   fates_next_api rebase into ctsm1.0.dev093
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     fates_next_api rebase into ctsm1.0.dev093
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Leaf Flutter
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../leaf-flutter/README.html">
+   Issue 383 study
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../leaf-flutter/issue383-optimum-clai-trim-fraction.html">
+     Issue 383 Optimum LAI versus trim increment
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../leaf-flutter/deciduous/README.html">
+     Deciduous test analysis
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../leaf-flutter/deciduous/cesmlog-parser.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         laimemory
+        </span>
+       </code>
+       CESM log output
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/fates_next_api-rebase/fates_next_api-rebase-notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/glemieux/fates-jupyter"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/glemieux/fates-jupyter/master?urlpath=tree/docs/fates_next_api-rebase/fates_next_api-rebase-notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#long-term-tests-100-year">
+   Long-term tests (100 year)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-site-test-bci">
+     Single site test: BCI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gridded-test-f10-f10-mg37-resolution">
+     Gridded test:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       f10_f10_mg37
+      </span>
+     </code>
+     resolution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="fates-next-api-rebase-into-ctsm1-0-dev093">
+<h1>fates_next_api rebase into ctsm1.0.dev093<a class="headerlink" href="#fates-next-api-rebase-into-ctsm1-0-dev093" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="long-term-tests-100-year">
+<h2>Long-term tests (100 year)<a class="headerlink" href="#long-term-tests-100-year" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="single-site-test-bci">
+<h3>Single site test: BCI<a class="headerlink" href="#single-site-test-bci" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Case location: lobata workstation</p>
+<ul>
+<li><p>fates_next_api baselines:</p>
+<ul>
+<li><p>Baseline 1 (sci.1.36.0_api.11.2.0): <code class="docutils literal notranslate"><span class="pre">/home/glemieux/scratch/clmed-cases/fna-rebase.Ce33b4658-F7c065e21.2020-07-27</span></code></p></li>
+<li><p>Baseline 2 (sci.1.40.1_api.13.0.1): <code class="docutils literal notranslate"><span class="pre">/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cabcd5937-F3248e633.2020-08-05</span></code></p></li>
+</ul>
+</li>
+<li><p>fates_main_api tests:</p>
+<ul>
+<li><p>Test 1 (sci.1.36.0_api.11.2.0): <code class="docutils literal notranslate"><span class="pre">/home/glemieux/scratch/clmed-cases/fna-rebase.C024b43a8-F7c065e21.2020-07-27</span></code></p></li>
+<li><p>Test 2 (sci.1.40.1_api.13.0.1): <code class="docutils literal notranslate"><span class="pre">/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cd6ef097c-F3248e633.2020-08-05</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="gridded-test-f10-f10-mg37-resolution">
+<h3>Gridded test: <code class="docutils literal notranslate"><span class="pre">f10_f10_mg37</span></code> resolution<a class="headerlink" href="#gridded-test-f10-f10-mg37-resolution" title="Permalink to this headline">¶</a></h3>
+<p>All plots are a difference between the fates_main_api test and the fates_next_api baseline for the last time step.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">Makie</span><span class="p">,</span> <span class="n">AbstractPlotting</span>
+<span class="k">using</span> <span class="n">Images</span><span class="p">,</span> <span class="n">ImageView</span>
+<span class="k">using</span> <span class="n">TestImages</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>┌ Info: Precompiling Makie [ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a]
+└ @ Base loading.jl:1278
+┌ Info: Precompiling Images [916415d5-f1e6-5110-898d-aaa5f9f070e0]
+└ @ Base loading.jl:1278
+┌ Info: Precompiling ImageView [86fae568-95e7-573e-a6b2-d8a6b900c9ef]
+└ @ Base loading.jl:1278
+Gtk-Message: 09:07:39.464: Failed to load module &quot;appmenu-gtk-module&quot;
+Gtk-Message: 09:07:39.535: Failed to load module &quot;canberra-gtk-module&quot;
+Gtk-Message: 09:07:39.536: Failed to load module &quot;canberra-gtk-module&quot;
+Gtk-Message: 09:07:44.496: Failed to load module &quot;appmenu-gtk-module&quot;
+Gtk-Message: 09:07:44.566: Failed to load module &quot;canberra-gtk-module&quot;
+Gtk-Message: 09:07:44.566: Failed to load module &quot;canberra-gtk-module&quot;
+┌ Warning: The call to compilecache failed to create a usable precompiled cache file for ImageView [86fae568-95e7-573e-a6b2-d8a6b900c9ef]
+│   exception = ErrorException(&quot;Required dependency GTK3_jll [77ec8976-b24b-556a-a1bf-49a033a670a6] failed to load from a cache file.&quot;)
+└ @ Base loading.jl:1042
+┌ Warning: Replacing module `GTK3_jll`
+└ @ Base loading.jl:948
+Gtk-Message: 09:08:13.362: Failed to load module &quot;appmenu-gtk-module&quot;
+Gtk-Message: 09:08:13.446: Failed to load module &quot;canberra-gtk-module&quot;
+Gtk-Message: 09:08:13.446: Failed to load module &quot;canberra-gtk-module&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">timg</span> <span class="o">=</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;lighthouse&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Green">Downloading</span> artifact: images
+?25l
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>######################################################################### 100.0%
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h
+</pre></div>
+</div>
+<img alt="../_images/fates_next_api-rebase-notebook_5_3.png" src="../_images/fates_next_api-rebase-notebook_5_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="n">timg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array{RGB{Normed{UInt8,8}},2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="p">(</span><span class="n">timg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="s">&quot;Test-Cases/Long-Term/gridded/pftleafbiomass_pft-12_main-next_and_map.png&quot;</span>
+<span class="n">loadedimg</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">typeof</span><span class="p">(</span><span class="n">loadedimg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array{RGBA{Normed{UInt8,8}},2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">imshow</span><span class="p">(</span><span class="n">loadedimg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dict{String,Any} with 4 entries:
+  &quot;gui&quot;         =&gt; Dict{String,Any}(&quot;window&quot;=&gt;GtkWindowLeaf(name=&quot;&quot;, parent, wi…
+  &quot;roi&quot;         =&gt; Dict{String,Any}(&quot;redraw&quot;=&gt;32: &quot;map(f-mapped image, input-2)…
+  &quot;annotations&quot; =&gt; 2: &quot;input-2&quot; = Dict{UInt64,Any}() Dict{UInt64,Any} 
+  &quot;clim&quot;        =&gt; nothing
+</pre></div>
+</div>
+</div>
+</div>
+<p>AGB | BIOMASS_CANOPY</p>
+<p><img src="Test-Cases/Long-Term/gridded/agb_main-next_end_map.png" alt="Image Test" style="width:600px"> <img src="Test-Cases/Long-Term/gridded/biomass_canopy_main-next_end_map.png" alt="Image Test" style="width:600px"></p>
+<p>BIOMASS_CANOPY</p>
+<p><img alt="BIOMASS_CANOPY" src="../_images/biomass_canopy_main-next_end_map.png" /></p>
+<p>BIOMASS_CANOPY</p>
+<p><img alt="BIOMASS_CANOPY" src="../_images/biomass_canopy_main-next_end_map.png" /></p>
+<p>ED_BIOMASS</p>
+<p><img alt="ED_BIOMASS" src="../_images/ed_biomass_cwd_main-next_end_map.png" /></p>
+<p>GPP</p>
+<p><img alt="GPP" src="../_images/gpp_main-next_end_map.png" /></p>
+<p>LITTER_CWD</p>
+<p><img alt="LITTER_CWD" src="../_images/litter_cwd_main-next_k1_end_map.png" /></p>
+<p>NEP</p>
+<p><img alt="NEP" src="../_images/nep_main-next_end_map.png" /></p>
+<p>NPP</p>
+<p><img alt="NPP" src="../_images/npp_main-next_end_map.png" /></p>
+<p>PFTLEAFBIOMASS, PFT 1</p>
+<p><img alt="PFTLEAFBIOMASS_PFT1" src="../_images/pftleafbiomass_pft-1_main-next_and_map.png" /></p>
+<p>PFTLEAFBIOMASS, PFT 12</p>
+<p><img alt="PFTLEAFBIOMASS_PFT12" src="../_images/pftleafbiomass_pft-12_main-next_and_map.png" /></p>
+<p>TLAI</p>
+<p><img alt="TLAI" src="../_images/tlai_main-next_end_map.png" /></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "julia-1.5"
+        },
+        kernelOptions: {
+            kernelName: "julia-1.5",
+            path: "./fates_next_api-rebase"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'julia-1.5'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">fates_next_api rebase into ctsm1.0.dev093</a>
+    <a class='right-next' id="next-link" href="../leaf-flutter/README.html" title="next page">Issue 383 study</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gregory Lemieux<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

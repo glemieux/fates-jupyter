@@ -1,0 +1,37 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+- file: README
+
+- part: California 
+  chapters:
+  - file: california/README
+    sections:
+    - file: california/new-dimension-age_by_fuel
+
+- part: Fragmentation
+  chapters:
+  - file: fragmentation/README
+    sections:
+    - file: fragmentation/fragmentation_update-base_compare
+    - file: fragmentation/fragmentation_update-pr711
+
+- part: FATES_MAIN_API
+  chapters:
+  - file: fates_next_api-rebase/README
+    sections:
+    - file: fates_next_api-rebase/fates_next_api-rebase-notebook
+
+- part: Leaf Flutter
+  chapters:
+  - file: leaf-flutter/README
+    sections: 
+    - file: leaf-flutter/issue383-optimum-clai-trim-fraction
+    - file: leaf-flutter/deciduous/README
+      sections:
+      - file: leaf-flutter/deciduous/cesmlog-parser
+
+# Not sure why this isn't working
+  # - file: leaf-flutter/scratch/README
+  #   sections: 
+  #   - file: net_uptake-leaf_cost

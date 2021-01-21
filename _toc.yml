@@ -16,11 +16,14 @@
     - file: fragmentation/fragmentation_update-base_compare
     - file: fragmentation/fragmentation_update-pr711
 
-- part: FATES_MAIN_API
+- part: fates_main_api
   chapters:
   - file: fates_next_api-rebase/README
     sections:
     - file: fates_next_api-rebase/fates_next_api-rebase-notebook
+  - file: fates_main_api-merges/README
+    secrets:
+    - file: fates_main_api/ctsm5_1_dev020-f45.ipynb
 
 - part: Leaf Flutter
   chapters:

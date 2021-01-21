@@ -18,12 +18,12 @@
 
 - part: fates_main_api
   chapters:
-  - file: fates_next_api-rebase/README
+  - file: fates_main_api/fates_next_api-rebase/README
     sections:
-    - file: fates_next_api-rebase/fates_next_api-rebase-notebook
-  - file: fates_main_api-merges/README
+    - file: fates_main_api/fates_next_api-rebase/fates_next_api-rebase-notebook
+  - file: fates_main_api/fates_main_api-merges/README
     secrets:
-    - file: fates_main_api/ctsm5_1_dev020-f45.ipynb
+    - file: fates_main_api/fates_main_api-merges/ctsm5_1_dev020-f45.ipynb
 
 - part: Leaf Flutter
   chapters:

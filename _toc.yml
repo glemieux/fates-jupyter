@@ -24,7 +24,7 @@
       sections:
       - file: fates_main_api/fates_next_api-rebase/fates_next_api-rebase-notebook
     - file: fates_main_api/fates_main_api-merges/README
-      secrets:
+      sections:
       - file: fates_main_api/fates_main_api-merges/ctsm5_1_dev020-f45
 
 - part: Leaf Flutter

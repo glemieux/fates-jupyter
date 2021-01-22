@@ -375,7 +375,7 @@
 <p>Above ground coarse woody debris</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">litter_cwd_ag_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">);</span>
 <span class="n">litter_cwd_ag_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
@@ -403,41 +403,10 @@
 </div>
 </div>
 </div>
+<p>Number of patches</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that the data is B4B in the time range tested by the regression</span>
-<span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">13</span> <span class="c1"># months</span>
-<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">litter_cwd_ag_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">);</span>
-<span class="n">litter_cwd_ag_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
-<span class="n">litter_cwd_ag_diff</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">);</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;fates_main_api&#39;</span><span class="p">);</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ctsm5.1.dev020-merge&#39;</span><span class="p">)</span>
-<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Difference&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_40_0.png" src="../../_images/ctsm5_1_dev020-f45_40_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># diff ratio based on max scale</span>
-<span class="o">.</span><span class="mi">04</span><span class="o">/</span><span class="mi">1600</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5e-05
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that the number of patches prior to year two are the same</span>
-<span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">13</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">npatches_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">);</span>
 <span class="n">npatches_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
@@ -449,7 +418,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_42_0.png" src="../../_images/ctsm5_1_dev020-f45_42_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_41_0.png" src="../../_images/ctsm5_1_dev020-f45_41_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -461,37 +430,6 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.004
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show number of patches at end of 10 years</span>
-<span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
-<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">npatches_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">);</span>
-<span class="n">npatches_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">);</span>
-<span class="n">npatches_diff</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">);</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;fates_main_api&#39;</span><span class="p">);</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ctsm5.1.dev020-merge&#39;</span><span class="p">)</span>
-<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Difference&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_44_0.png" src="../../_images/ctsm5_1_dev020-f45_44_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># diff ratio based on max scale</span>
-<span class="mf">1.5</span><span class="o">/</span><span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.15
 </pre></div>
 </div>
 </div>
@@ -511,7 +449,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_47_0.png" src="../../_images/ctsm5_1_dev020-f45_47_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_44_0.png" src="../../_images/ctsm5_1_dev020-f45_44_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -542,7 +480,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_50_0.png" src="../../_images/ctsm5_1_dev020-f45_50_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_47_0.png" src="../../_images/ctsm5_1_dev020-f45_47_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -573,7 +511,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_53_0.png" src="../../_images/ctsm5_1_dev020-f45_53_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_50_0.png" src="../../_images/ctsm5_1_dev020-f45_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -592,7 +530,7 @@
 <p>Fuel intensity</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 0</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">fuel_intensity_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">fuel_intensity_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -607,7 +545,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Difference&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/ctsm5_1_dev020-f45_56_1.png" src="../../_images/ctsm5_1_dev020-f45_56_1.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_53_1.png" src="../../_images/ctsm5_1_dev020-f45_53_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -626,7 +564,7 @@
 <p>Fuel surface/volume</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 0</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">fuel_sav_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">fuel_sav_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -638,7 +576,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_59_0.png" src="../../_images/ctsm5_1_dev020-f45_59_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_56_0.png" src="../../_images/ctsm5_1_dev020-f45_56_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -657,7 +595,7 @@
 <p>Effective Fuel moisture</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 0</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">fuel_eff_moist_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">fuel_eff_moist_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -669,7 +607,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_62_0.png" src="../../_images/ctsm5_1_dev020-f45_62_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_59_0.png" src="../../_images/ctsm5_1_dev020-f45_59_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -688,7 +626,7 @@
 <p>Fuel bulk density</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">fuel_bulkd_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">fuel_bulkd_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -703,7 +641,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Difference&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/ctsm5_1_dev020-f45_65_1.png" src="../../_images/ctsm5_1_dev020-f45_65_1.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_62_1.png" src="../../_images/ctsm5_1_dev020-f45_62_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -722,7 +660,7 @@
 <p>Fuel moisture (MEF)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">fuel_mef_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">fuel_mef_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -737,7 +675,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Difference&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/ctsm5_1_dev020-f45_68_1.png" src="../../_images/ctsm5_1_dev020-f45_68_1.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_65_1.png" src="../../_images/ctsm5_1_dev020-f45_65_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -756,7 +694,7 @@
 <p>Ground fuel within each patch age bin</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">fg</span> <span class="o">=</span> <span class="n">sum_fuel_pa_diff</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
                             <span class="n">col</span><span class="o">=</span><span class="s1">&#39;fates_levage&#39;</span><span class="p">,</span> <span class="n">col_wrap</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
                             <span class="n">subplot_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()})</span>
@@ -766,13 +704,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_71_0.png" src="../../_images/ctsm5_1_dev020-f45_71_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_68_0.png" src="../../_images/ctsm5_1_dev020-f45_68_0.png" />
 </div>
 </div>
 <p>Ground fuel within each patch age bin (ctsm5.1.dev020-merge)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">sum_fuel_pa_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">sum_fuel_pa_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -784,7 +722,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_73_0.png" src="../../_images/ctsm5_1_dev020-f45_73_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_70_0.png" src="../../_images/ctsm5_1_dev020-f45_70_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -803,7 +741,7 @@
 <p>Total ground fuel</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">sum_fuel_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">sum_fuel_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -815,7 +753,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_76_0.png" src="../../_images/ctsm5_1_dev020-f45_76_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_73_0.png" src="../../_images/ctsm5_1_dev020-f45_73_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -834,7 +772,7 @@
 <p>Corrected fire intensity</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">fire_intensity_corr_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">fire_intensity_corr_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -846,7 +784,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_79_0.png" src="../../_images/ctsm5_1_dev020-f45_79_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_76_0.png" src="../../_images/ctsm5_1_dev020-f45_76_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -865,7 +803,7 @@
 <p>Fuel moisture</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">fg</span> <span class="o">=</span> <span class="n">fuel_moist_diff</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
                             <span class="n">col</span><span class="o">=</span><span class="s1">&#39;fates_levfuel&#39;</span><span class="p">,</span> <span class="n">col_wrap</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
                             <span class="n">subplot_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()})</span>
@@ -875,13 +813,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_82_0.png" src="../../_images/ctsm5_1_dev020-f45_82_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_79_0.png" src="../../_images/ctsm5_1_dev020-f45_79_0.png" />
 </div>
 </div>
 <p>Fuel moisture (Difference)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tstop_idx</span> <span class="o">=</span> <span class="mi">119</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tstop_idx = 119</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">sum_fuel_pa_base</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 <span class="n">sum_fuel_pa_test</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">tstop_idx</span><span class="p">,</span><span class="n">fates_levage</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
@@ -893,7 +831,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ctsm5_1_dev020-f45_84_0.png" src="../../_images/ctsm5_1_dev020-f45_84_0.png" />
+<img alt="../../_images/ctsm5_1_dev020-f45_81_0.png" src="../../_images/ctsm5_1_dev020-f45_81_0.png" />
 </div>
 </div>
 <div class="cell docutils container">

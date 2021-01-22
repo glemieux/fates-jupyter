@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fates_next_api rebase into ctsm1.0.dev093 &mdash; FATES development notebooks</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/mystnb.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinx-thebe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+        <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="fates_next_api rebase into ctsm1.0.dev093" href="fates_next_api-rebase-notebook.html" />
+    <link rel="prev" title="fates_main_api notebooks" href="../README.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../README.html">
+          
+
+          
+            
+            <img src="../../_static/ngeet.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">California</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../california/README.html">California FATES development</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Fragmentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fragmentation/README.html">FATES-HLM fragmentation scalar implementation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">fates_main_api</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../README.html">fates_main_api notebooks</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fates_next_api rebase into ctsm1.0.dev093</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fates_next_api-rebase-notebook.html">fates_next_api rebase into ctsm1.0.dev093</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fates_main_api-merges/README.html"><code class="docutils literal notranslate"><span class="pre">fates_main_api</span></code> merges</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Leaf Flutter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../leaf-flutter/README.html">Issue 383 study</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../README.html">Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../README.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../README.html">fates_main_api notebooks</a> &raquo;</li>
+        
+      <li>fates_next_api rebase into ctsm1.0.dev093</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/fates_main_api/fates_next_api-rebase/README.md" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fates-next-api-rebase-into-ctsm1-0-dev093">
+<h1>fates_next_api rebase into ctsm1.0.dev093<a class="headerlink" href="#fates-next-api-rebase-into-ctsm1-0-dev093" title="Permalink to this headline">¶</a></h1>
+<p>This folder contains supporting materials for validation of the rebase effort to bring fates_next_api in line with the ctsm master branch.</p>
+<div class="section" id="regression-tests-summary">
+<h2>Regression tests summary<a class="headerlink" href="#regression-tests-summary" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-fates-main-api-sci-1-40-2-versus-fates-next-api-sci-1-40-2">
+<h3>A. fates_main_api (<code class="docutils literal notranslate"><span class="pre">sci.1.40.2</span></code>) versus fates_next_api (<code class="docutils literal notranslate"><span class="pre">sci.1.40.2</span></code>)<a class="headerlink" href="#a-fates-main-api-sci-1-40-2-versus-fates-next-api-sci-1-40-2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Purpose: What changes are due to the rebase</p></li>
+<li><p>How: Running <code class="docutils literal notranslate"><span class="pre">fates</span></code> test suite with fates_next_api as the baseline</p>
+<ul>
+<li><p>DIFFs had to be conducted manually due to run start time differences</p></li>
+</ul>
+</li>
+<li><p>Output: <code class="docutils literal notranslate"><span class="pre">/glade/u/home/glemieux/scratch/ctsm-tests/tests_fates_main_api-fatessuite-2</span></code></p></li>
+<li><p>Conclusion:</p></li>
+</ul>
+</div>
+<div class="section" id="b-fates-main-api-sci-1-40-2-versus-ctsm1-0-dev093-sci-1-30-0">
+<h3>B. fates_main_api (<code class="docutils literal notranslate"><span class="pre">sci.1.40.2</span></code>) versus ctsm1.0.dev093(<code class="docutils literal notranslate"><span class="pre">sci.1.30.0</span></code>)<a class="headerlink" href="#b-fates-main-api-sci-1-40-2-versus-ctsm1-0-dev093-sci-1-30-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Purpose: Determine if any non-fates tests are not B4B</p></li>
+<li><p>How: Running <code class="docutils literal notranslate"><span class="pre">aux_clm</span></code> suite with fates_main_api against ctsm baseline</p>
+<ul>
+<li><p>Fates specific tests DIFFs had to be manually conducted due to differences in output type (i.e. int vs. real)</p></li>
+</ul>
+</li>
+<li><p>Output: <code class="docutils literal notranslate"><span class="pre">/glade/u/home/glemieux/scratch/ctsm-tests/tests_fates_main_api-aux_clm</span></code></p></li>
+<li><p>Conclusion:</p>
+<ul>
+<li><p>All non-fates tests are B4B</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="c-fates-next-api-sci-1-40-2-versus-fates-next-api-sci-1-30-0">
+<h3>C. fates_next_api (<code class="docutils literal notranslate"><span class="pre">sci.1.40.2</span></code>) versus fates_next_api (<code class="docutils literal notranslate"><span class="pre">sci.1.30.0</span></code>)<a class="headerlink" href="#c-fates-next-api-sci-1-40-2-versus-fates-next-api-sci-1-30-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Purpose: what changed in the fates output between 1.30.0 and 1.40.2?</p>
+<ul>
+<li><p>Run to compare the fates specific output of test suite <a class="reference external" href="#b-fates_main_api-sci1402-versus-ctsm10dev093sci1300">B.</a></p></li>
+</ul>
+</li>
+<li><p>How: Manually DIFF the fates_next_api baselines against each other</p>
+<ul>
+<li><p>Baseline locations:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/glade/p/cgd/tss/ctsm_baselines/fates-sci.1.40.2_api.13.0.1-clm5.0.30-Cabcd5937-F0a7f69cb.fates.cheyenne.intel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/glade/p/cgd/tss/ctsm_baselines/fates-sci-1.30.0_api.8.0.0-C9651c6d0-F3f6749d4.fates.cheyenne.intel</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Location: <code class="docutils literal notranslate"><span class="pre">/glade/u/home/glemieux/scratch/fma-diffs/fates-sci.1.40.2_api.13.0.1-fates-sci-1.30.0_api.8.0.0</span></code></p></li>
+<li><p>Conclusion:</p>
+<ul>
+<li><p>Comparing test DIFFs between C. and B.</p>
+<ul>
+<li><p>The main limitation in comparing the test sets is there is little overlap in the gridsets used for both suites.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1x1_brazil</span></code> and <code class="docutils literal notranslate"><span class="pre">f45_f45_mg37</span></code> are the only overlaps</p></li>
+</ul>
+</li>
+<li><p>Note that all <code class="docutils literal notranslate"><span class="pre">aux_clm</span></code> fates test use the testmod ‘FatesColdDef’.  This furhter limits the set of tests to compare.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">aux_clm</span></code> fates tests are either SMS or ERS tests</p></li>
+<li><p>As a result of the above, the closest match between the <code class="docutils literal notranslate"><span class="pre">fates</span></code> suite and <code class="docutils literal notranslate"><span class="pre">aux_clm</span></code> suite tests is: <code class="docutils literal notranslate"><span class="pre">ERS_D_Mmpi-serial_Ld5.1x1_brazil.I2000Clm50FatesGs.cheyenne_intel.clm-FatesColdDef</span></code>
+- Note that the atmospheric data set is different between the two however.</p></li>
+<li><p>Comparison of the RMS values can be found here, although results are not entirely supportive of a specific hypothesis: https://docs.google.com/spreadsheets/d/1RlVrx0y7MW4jIZpSl3FB-wnHJiCTbYNZQ_5jn8jk9Kc/edit?usp=sharing</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="long-term-tests-100-year">
+<h2>Long-term tests (100 year)<a class="headerlink" href="#long-term-tests-100-year" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="single-site-test-bci">
+<h3>Single site test: BCI<a class="headerlink" href="#single-site-test-bci" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Case location: lobata workstation</p>
+<ul>
+<li><p>fates_next_api baselines:</p>
+<ul>
+<li><p>Baseline 1 (sci.1.36.0_api.11.2.0): <code class="docutils literal notranslate"><span class="pre">/home/glemieux/scratch/clmed-cases/fna-rebase.Ce33b4658-F7c065e21.2020-07-27</span></code></p></li>
+<li><p>Baseline 2 (sci.1.40.1_api.13.0.1): <code class="docutils literal notranslate"><span class="pre">/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cabcd5937-F3248e633.2020-08-05</span></code></p></li>
+</ul>
+</li>
+<li><p>fates_main_api tests:</p>
+<ul>
+<li><p>Test 1 (sci.1.36.0_api.11.2.0): <code class="docutils literal notranslate"><span class="pre">/home/glemieux/scratch/clmed-cases/fna-rebase.C024b43a8-F7c065e21.2020-07-27</span></code></p></li>
+<li><p>Test 2 (sci.1.40.1_api.13.0.1): <code class="docutils literal notranslate"><span class="pre">/home/glemieux/scratch/clmed-cases/fna-rebase-2.Cd6ef097c-F3248e633.2020-08-05</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="gridded-run-test-f10-f10-mg37-grid">
+<h3>Gridded run test: <code class="docutils literal notranslate"><span class="pre">f10_f10_mg37</span></code> grid<a class="headerlink" href="#gridded-run-test-f10-f10-mg37-grid" title="Permalink to this headline">¶</a></h3>
+<p>The gridded runs were conducted with fates tag <code class="docutils literal notranslate"><span class="pre">sci.1.40.3_api.13.0.1</span></code></p>
+<ul class="simple">
+<li><p>Case location: cheyenne</p>
+<ul>
+<li><p>Baseline: <code class="docutils literal notranslate"><span class="pre">/glade/u/home/glemieux/scratch/clmed-tests/fates_next_api-100_year.fates.cheyenne.Cabcd5937-F6bfea0f8</span></code></p></li>
+<li><p>Test: <code class="docutils literal notranslate"><span class="pre">/glade/u/home/glemieux/scratch/clmed-tests/fates_main_api-100_year.fates.cheyenne.Cc56788f3-F6bfea0f8</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./fates_main_api/fates_next_api-rebase"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fates_next_api-rebase-notebook.html" class="btn btn-neutral float-right" title="fates_next_api rebase into ctsm1.0.dev093" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../README.html" class="btn btn-neutral float-left" title="fates_main_api notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

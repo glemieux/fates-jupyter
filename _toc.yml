@@ -32,6 +32,7 @@
   - file: leaf-flutter/README
     sections: 
     - file: leaf-flutter/issue383-optimum-clai-trim-fraction
+    - file: leaf-flutter/pr623-linear-solver
     - file: leaf-flutter/deciduous/README
       sections:
       - file: leaf-flutter/deciduous/cesmlog-parser

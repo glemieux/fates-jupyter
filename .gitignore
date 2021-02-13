@@ -7,3 +7,6 @@
 # Data
 california/data
 fates_main_api-merges/data
+
+# Jupyterbook
+_build

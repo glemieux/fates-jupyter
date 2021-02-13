@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Issue 383 study &mdash; FATES development notebooks</title>
+  <title>Linear least squares solver technote &mdash; FATES development notebooks</title>
   
 
   
@@ -58,8 +58,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Issue 383 Optimum LAI versus trim increment" href="issue383-optimum-clai-trim-fraction.html" />
-    <link rel="prev" title="ctsm5.1.dev020 merge test and baseline comparison" href="../fates_main_api/fates_main_api-merges/ctsm5_1_dev020-f45.html" /> 
+    <link rel="next" title="Deciduous test analysis" href="deciduous/README.html" />
+    <link rel="prev" title="Issue 383 Optimum LAI versus trim increment" href="issue383-optimum-clai-trim-fraction.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -118,9 +118,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Leaf Flutter</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Issue 383 study</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Issue 383 study</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="issue383-optimum-clai-trim-fraction.html">Issue 383 Optimum LAI versus trim increment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pr623-linear-solver.html">Linear least squares solver technote</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linear least squares solver technote</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deciduous/README.html">Deciduous test analysis</a></li>
 </ul>
 </li>
@@ -172,13 +172,15 @@
     
       <li><a href="../README.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Issue 383 study</li>
+          <li><a href="README.html">Issue 383 study</a> &raquo;</li>
+        
+      <li>Linear least squares solver technote</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/leaf-flutter/README.md" rel="nofollow"> View page source</a>
+            <a href="../_sources/leaf-flutter/pr623-linear-solver.ipynb" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -191,20 +193,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="issue-383-study">
-<h1><a class="reference external" href="https://github.com/NGEET/fates/issues/383">Issue 383</a> study<a class="headerlink" href="#issue-383-study" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="jupyter-notebook">
-<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/glemieux/fates-jupyter/blob/master/leaf-flutter/issue383-optimum-clai-trim-fraction.ipynb">issue383-optimum-clai-trim-fraction</a>: Review of output from canopy trim fraction calculation using optimum clai</p>
+  <div class="section" id="linear-least-squares-solver-technote">
+<h1>Linear least squares solver technote<a class="headerlink" href="#linear-least-squares-solver-technote" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="http://www.personal.psu.edu/jhm/f90/lectures/lsq1.html">http://www.personal.psu.edu/jhm/f90/lectures/lsq1.html</a></p></li>
+<li><p>Boyd, S. and Vandenberghe, L., <u>Introduction to Applied Linear Algebra</u>, ppg 245 - 250, <a class="reference external" href="https://web.stanford.edu/~boyd/vmls/vmls.pdf">https://web.stanford.edu/~boyd/vmls/vmls.pdf</a></p></li>
+<li><p>LAPACK User’s Guide, Third Edition, <a class="reference external" href="http://www.netlib.org/lapack/lug/">http://www.netlib.org/lapack/lug/</a></p></li>
+</ol>
 </div>
-<div class="section" id="folder-descriptions">
-<h2>Folder descriptions<a class="headerlink" href="#folder-descriptions" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/glemieux/fates-jupyter/tree/master/leaf-flutter/ACRE-output">ACRE-comparison folder</a>: BCI site level acre-comparison plots and output.</p></li>
-<li><p><a class="reference external" href="https://github.com/glemieux/fates-jupyter/tree/master/leaf-flutter/deciduous">Deciduous analysis</a>: Exploration of decidious <code class="docutils literal notranslate"><span class="pre">laimemory</span></code> calculation results</p></li>
-<li><p><a class="reference external" href="https://github.com/glemieux/fates-jupyter/tree/master/leaf-flutter/scratch">Scratch folder</a>: initial scratch work notebooks</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+<div class="section" id="linear-system-setup">
+<h2>Linear system setup<a class="headerlink" href="#linear-system-setup" title="Permalink to this headline">¶</a></h2>
+<p>We wish to fit a straight line to the data point set <span class="math notranslate nohighlight">\((x_i,y_i)\)</span>:
+$<span class="math notranslate nohighlight">\(y_i = mx_i + b\)</span><span class="math notranslate nohighlight">\(
+where \)</span>x<span class="math notranslate nohighlight">\( is the the `currentCohort%year_net_uptake(z)` minus the `currentCohort%leaf_cost` and and \)</span>y<span class="math notranslate nohighlight">\( is the `cumulative_lai` for the cohort to the given leaf layer \)</span>i<span class="math notranslate nohighlight">\( (denoted as `z` in the code).  Our goal is to determine the \)</span>y<span class="math notranslate nohighlight">\(-intercept, \)</span>b<span class="math notranslate nohighlight">\(, to determine what the theoretical &quot;optimitial LAI&quot; is that balances out the leaf layer uptake after costs (i.e. where \)</span>x=0<span class="math notranslate nohighlight">\().  We can model this data as a linear system:
+\)</span><span class="math notranslate nohighlight">\(\vec{y} = \mathbf{A}\vec{z}\)</span><span class="math notranslate nohighlight">\(
+where:
+\)</span><span class="math notranslate nohighlight">\(\vec{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_N \end{bmatrix}, \quad \mathbf{A} = \begin{bmatrix} 1 &amp; x_1 \\ 1 &amp; x_2 \\ \vdots &amp; \vdots \\ 1 &amp; x_N \end{bmatrix}, \quad \vec{z} = \begin{bmatrix} b \\ m \end{bmatrix} \)</span><span class="math notranslate nohighlight">\(
+Here \)</span>\vec{z}<span class="math notranslate nohighlight">\( is our solution vector consisting of the slope and intercept of our linear fit function.  To determine the best fit to the set of data points, we need to minimize the residual, \)</span>\Vert r \Vert^2<span class="math notranslate nohighlight">\(:
+\)</span><span class="math notranslate nohighlight">\(\Vert r \Vert^2 = \Vert \mathbf{A}\vec{z} - \vec{y} \Vert^2\)</span><span class="math notranslate nohighlight">\(
+We arrange in this form for the `dgels` LAPACK solver:
+\)</span><span class="math notranslate nohighlight">\(\left(\mathbf{A}^T\mathbf{A} \right)\vec{z} = \mathbf{A}^T\vec{y}\)</span><span class="math notranslate nohighlight">\(
+which expands to:
+\)</span><span class="math notranslate nohighlight">\( \begin{bmatrix} N &amp; \sum_{i=1}^N{x_i} \\ \sum_{i=1}^N{x_i} &amp; \sum_{i=1}^N{x_i}^2  \end{bmatrix} \begin{bmatrix} b \\ m \end{bmatrix} =  \begin{bmatrix} \sum_{i=1}^N{y_i} \\ \sum_{i=1}^N{x_i}{y_i}  \end{bmatrix}\)</span>$</p>
+</div>
+<div class="section" id="translation-to-code">
+<h2>Translation to code<a class="headerlink" href="#translation-to-code" title="Permalink to this headline">¶</a></h2>
+<p>Given that we are retaining the code that loops through each leaf layer to maintain the original cohort method for leaf layers of less than some hardcoded minimun number (given as <code class="docutils literal notranslate"><span class="pre">nll</span></code> in the code), we can accumulate the sums and products of linear system matrices on the fly as opposed to saving off the <span class="math notranslate nohighlight">\(\vec{x}\)</span> and <span class="math notranslate nohighlight">\(\vec{y}\)</span> vectors using the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nnu_clai_a(1,1) = nnu_clai_a(1,1) + 1 ! Increment for each layer used
+nnu_clai_a(1,2) = nnu_clai_a(1,2) + currentCohort%year_net_uptake(z) - currentCohort%leaf_cost
+nnu_clai_a(2,1) = nnu_clai_a(1,2)
+nnu_clai_a(2,2) = nnu_clai_a(2,2) + (currentCohort%year_net_uptake(z) - currentCohort%leaf_cost)**2
+nnu_clai_b(1,1) = nnu_clai_b(1,1) + cumulative_lai
+nnu_clai_b(2,1) = nnu_clai_b(2,1) + (cumulative_lai * &amp; 
+                (currentCohort%year_net_uptake(z) - currentCohort%leaf_cost))
+</pre></div>
 </div>
 </div>
 </div>
@@ -218,24 +242,24 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "julia-1.4"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "julia-1.4",
             path: "./leaf-flutter"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'julia-1.4'</script>
 
            </div>
            
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="issue383-optimum-clai-trim-fraction.html" class="btn btn-neutral float-right" title="Issue 383 Optimum LAI versus trim increment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../fates_main_api/fates_main_api-merges/ctsm5_1_dev020-f45.html" class="btn btn-neutral float-left" title="ctsm5.1.dev020 merge test and baseline comparison" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="deciduous/README.html" class="btn btn-neutral float-right" title="Deciduous test analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="issue383-optimum-clai-trim-fraction.html" class="btn btn-neutral float-left" title="Issue 383 Optimum LAI versus trim increment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

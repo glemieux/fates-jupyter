@@ -42,9 +42,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-        <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+        <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
         <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
         <script >
         const thebe_selector = ".thebe"
@@ -234,9 +232,9 @@
 
 <span class="c"># Read through each line and pull out the unique threadnumbers</span>
 <span class="n">A</span> <span class="o">=</span> <span class="kt">Vector</span><span class="p">{</span><span class="kt">Int64</span><span class="p">}()</span> <span class="c"># Initialize</span>
-<span class="k">for</span> <span class="n">line</span> <span class="kp">in</span> <span class="n">eachline</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="k">in</span> <span class="n">eachline</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">threadnum</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="kt">Int64</span><span class="p">,</span><span class="n">split</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c"># Parse the line for the thread number</span>
-    <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="kp">in</span><span class="p">(</span><span class="n">threadnum</span><span class="p">,</span><span class="n">A</span><span class="p">))</span> <span class="c"># If not in the array add it</span>
+    <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="k">in</span><span class="p">(</span><span class="n">threadnum</span><span class="p">,</span><span class="n">A</span><span class="p">))</span> <span class="c"># If not in the array add it</span>
         <span class="n">push!</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">threadnum</span><span class="p">)</span>
     <span class="k">end</span>
 <span class="k">end</span>
@@ -328,14 +326,14 @@ true
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># Leaf status check loop</span>
 <span class="n">totallaicount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">for</span> <span class="n">t</span> <span class="kp">in</span> <span class="n">A</span>
+<span class="k">for</span> <span class="n">t</span> <span class="k">in</span> <span class="n">A</span>
 <span class="c">#     println(t)</span>
     
 <span class="c"># Try implementing regex instead of parse</span>
 <span class="c">#     f = open(filename) # Open the file`</span>
     
     <span class="c"># Iterate through file</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="kp">in</span> <span class="n">eachline</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="k">in</span> <span class="n">eachline</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
         
         <span class="n">linesplit</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="c"># Split into array of strings</span>
         <span class="n">threadnum</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="kt">Int64</span><span class="p">,</span><span class="n">linesplit</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c"># Parse the line for the thread number</span>
@@ -414,7 +412,7 @@ true
 <p>Confirm the deciduous states are mutually exclusive</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">decid_states</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">,[</span><span class="o">:</span><span class="n">stress_decid</span><span class="p">,</span><span class="o">:</span><span class="n">seasonal_decid</span><span class="p">,</span><span class="o">:</span><span class="n">evergreen_decid</span><span class="p">]);</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">decid_states</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">,[</span><span class="ss">:stress_decid</span><span class="p">,</span><span class="ss">:seasonal_decid</span><span class="p">,</span><span class="ss">:evergreen_decid</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
@@ -457,7 +455,7 @@ true
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">laimem_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="o">:</span><span class="n">laimem_zero</span><span class="p">);</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">laimem_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="ss">:laimem_zero</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -502,7 +500,7 @@ true
 <p><strong>Stress deciduous</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">stress_laimem_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">laimem_group</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">:</span><span class="n">stress_decid</span><span class="p">);</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">stress_laimem_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">laimem_group</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="ss">:stress_decid</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -533,7 +531,7 @@ true
 <p><strong>Seasonal deciduous</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">seasonal_laimem_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">laimem_group</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">:</span><span class="n">seasonal_decid</span><span class="p">);</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">seasonal_laimem_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">laimem_group</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="ss">:seasonal_decid</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -579,7 +577,7 @@ true
 <p>Determine if all the other zero <code class="docutils literal notranslate"><span class="pre">laimemory</span></code> instances are evergreens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">evergreen_laimem_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">laimem_group</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">:</span><span class="n">evergreen_decid</span><span class="p">);</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">evergreen_laimem_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">laimem_group</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="ss">:evergreen_decid</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -643,7 +641,7 @@ true
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">nnu_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="o">:</span><span class="n">nnu_gtone</span><span class="p">);</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">nnu_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="ss">:nnu_gtone</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -695,7 +693,7 @@ true
 <p>Now lets split the group along the those cases that only have <code class="docutils literal notranslate"><span class="pre">laimemory</span></code> of <code class="docutils literal notranslate"><span class="pre">0</span></code> to see if any cohorts with non-zero laimemory are making it into the optimization loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">nnu_laimemzero_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">nnu_group</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="o">:</span><span class="n">laimem_zero</span><span class="p">)</span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">nnu_laimemzero_group</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">nnu_group</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="ss">:laimem_zero</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

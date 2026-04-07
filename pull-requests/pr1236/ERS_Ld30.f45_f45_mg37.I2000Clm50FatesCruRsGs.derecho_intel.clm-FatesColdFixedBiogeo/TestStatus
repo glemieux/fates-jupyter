@@ -1,0 +1,15 @@
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo CREATE_NEWCASE
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo XML
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo SETUP
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo SHAREDLIB_BUILD time=18
+FAIL ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo NLCOMP
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo MODEL_BUILD time=79
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo SUBMIT
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo RUN time=124
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo COMPARE_base_rest
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo GENERATE fates-sci.1.78.2_api.36.0.0-ctsm5.2.029
+FAIL ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo BASELINE fates-sci.1.78.2_api.36.0.0-ctsm5.2.028: DIFF
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo MEMCOMP
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo TPUTCOMP
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo MEMLEAK
+PASS ERS_Ld30.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-FatesColdFixedBiogeo SHORT_TERM_ARCHIVER

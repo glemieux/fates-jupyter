@@ -1,0 +1,14 @@
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates CREATE_NEWCASE
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates XML
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates SETUP
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates SHAREDLIB_BUILD time=19
+FAIL SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates NLCOMP
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates MODEL_BUILD time=74
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates SUBMIT
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates RUN time=204
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates GENERATE fates-sci.1.78.2_api.36.0.0-ctsm5.2.029
+FAIL SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates BASELINE fates-sci.1.78.2_api.36.0.0-ctsm5.2.028: DIFF
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates MEMCOMP
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates TPUTCOMP
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates MEMLEAK
+PASS SMS_Lm6.f45_f45_mg37.I2000Clm50FatesCruRsGs.derecho_intel.clm-Fates SHORT_TERM_ARCHIVER

@@ -1,0 +1,6 @@
+&dust_emis_inparm
+  dust_emis_method = 'Leung_2023'
+/
+&ozone_coupling_nl
+  atm_ozone_frequency = 'multiday_average'
+/

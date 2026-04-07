@@ -1,0 +1,14 @@
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic CREATE_NEWCASE
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic XML
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic SETUP
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic SHAREDLIB_BUILD time=20
+FAIL SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic NLCOMP
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic MODEL_BUILD time=74
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic SUBMIT
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic RUN time=65
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic GENERATE fates-sci.1.78.2_api.36.0.0-ctsm5.2.029
+FAIL SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic BASELINE fates-sci.1.78.2_api.36.0.0-ctsm5.2.028: DIFF
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic MEMCOMP
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic TPUTCOMP
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic MEMLEAK
+PASS SMS_Lm1.f45_f45_mg37.I2000Clm60FatesSpCruRsGs.derecho_intel.clm-FatesColdBasic SHORT_TERM_ARCHIVER
